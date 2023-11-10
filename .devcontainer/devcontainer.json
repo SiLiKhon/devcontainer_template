@@ -1,0 +1,19 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {},
+        "context": "../"
+    },
+    "remoteUser": "container-user",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "initializeCommand": "id -u > .tmp_uid && id -g > .tmp_gid",
+    "postStartCommand": "rm .tmp_uid .tmp_gid"
+}
